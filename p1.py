@@ -103,11 +103,8 @@ model = Model()
 for k, v in module.items():
     v = ' '.join(v)
     data = tokenizer.tokenize_sentence(v)
-    print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-    print(k)
     clusters = model.fit(data)
     summarizer = Summarizer(clusters)
-    print('***************************************')
     print(summarizer.generate())
 
 
